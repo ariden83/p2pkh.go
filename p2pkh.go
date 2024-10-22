@@ -12,6 +12,10 @@ import (
 	bip39 "github.com/tyler-smith/go-bip39"
 )
 
+// Network represents the type of blockchain network the wallet operates on.
+// It can either be "mainnet" for the production Bitcoin network or "testnet"
+// for the test Bitcoin network, allowing for separate configurations and
+// behaviors for each network.
 type Network string
 
 const (
