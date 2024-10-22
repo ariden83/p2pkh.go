@@ -24,13 +24,13 @@ This repository contains an implementation of a hierarchical deterministic (HD) 
 To use this package, you will need to have Go installed on your system. You can install the package using go get:
 
 ```bash
-go get github.com/yourusername/p2pkh
+go get github.com/ariden83/p2pkh.go
 ```
 
 Then, import it in your Go code:
 
 ```go
-import "github.com/yourusername/p2pkh"
+import "github.com/ariden83/p2pkh.go"
 ```
 
 ## Usage
@@ -43,16 +43,16 @@ You can create a new wallet by providing a mnemonic, network type, and a derivat
 package main
 
 import (
-"fmt"
-"github.com/yourusername/p2pkh"
+    "fmt"
+    "github.com/ariden83/p2pkh.go"
 )
 
 func main() {
-config := &p2pkh.Config{
-Mnemonic: "romance trash engine during cliff verify tunnel memory vault chief fluid fox",
-Path:     `m/44'/0'/0'/0/0`,  // Mainnet derivation path
-Network:  p2pkh.NetworkMainnet,
-}
+    config := &p2pkh.Config{
+        Mnemonic: "romance trash engine during cliff verify tunnel memory vault chief fluid fox",
+        Path:     `m/44'/0'/0'/0/0`,  // Mainnet derivation path
+        Network:  p2pkh.NetworkMainnet,
+    }
 
     wallet, err := p2pkh.New(config)
     if err != nil {
@@ -80,9 +80,9 @@ The `Config` struct is used to create a new wallet. It requires the following fi
 
 ```go
 config := &p2pkh.Config{
-Mnemonic: "romance trash engine during cliff verify tunnel memory vault chief fluid fox",
-Path:     `m/44'/1'/0'/0/0`,  // Testnet derivation path
-Network:  p2pkh.NetworkTestnet,
+    Mnemonic: "romance trash engine during cliff verify tunnel memory vault chief fluid fox",
+    Path:     `m/44'/1'/0'/0/0`,  // Testnet derivation path
+    Network:  p2pkh.NetworkTestnet,
 }
 ```
 
